@@ -1,3 +1,5 @@
+
+
 <?php 
 function FormUsername($inputText){//for username
 	$inputText=strip_tags($inputText);//only text 
@@ -17,27 +19,19 @@ function FormPassword($inputText){//for password
     return $inputText;
 }
 
-if(isset($_POST['loginButton'])){
-	//login button was pressed
-	
-}
+
+
 if(isset($_POST['registerButton'])){
 	//login button was pressed
 	$username= FormUsername($_POST['registerUsername']);
-	
 	$firstName= FormUserString($_POST['firstName']);
-
 	$lastName= FormUserString($_POST['lastName']);
-
 	$email= FormUserString($_POST['email']);
-
 	$email2= FormUserString($_POST['email2']);
-
 	$password= FormPassword($_POST['registerPassword']);
-
 	$password2= FormPassword($_POST['registerPassword2']);
 	
-
+	$account->register($username,$firstName,$lastName,$email,$email2,$password,$password2);
 }
 
 
