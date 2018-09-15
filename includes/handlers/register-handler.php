@@ -31,7 +31,13 @@ if(isset($_POST['registerButton'])){
 	$password= FormPassword($_POST['registerPassword']);
 	$password2= FormPassword($_POST['registerPassword2']);
 	
-	$account->register($username,$firstName,$lastName,$email,$email2,$password,$password2);
+	//WHEN button is pressed calls regsiter fn to validate data
+	$wasSuccessful=$account->register($username,$firstName,$lastName,$email,$email2,$password,$password2);
+
+	if($wasSuccessful){
+		//if succ then route user to index page
+		header("Location:index.php");
+	}
 }
 
 

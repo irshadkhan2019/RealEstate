@@ -13,9 +13,25 @@
 			$this->validateLastname($ln);
 			$this->validateEmails($em,$em2);
 			$this->validatePasswords($pw,$pw2);
-
-
+            //if no errors then insert into db proccess form
+            if(empty($this->errorArray==true))//check if err array is empty or not
+            {   
+            	//insert into db
+            	return true;//if no error this true is retuned to $wasSuccesful in register-handler
+            }
+            else{
+            	return false;
+            }
         }//end of register
+
+        public function getError($error){
+        	//check if error passed !exist in errorArray
+        	if(!in_array($error,$this->errorArray)){
+                   $error="";
+        	}
+        	//if exist then
+        	return"<span class='errorMessage'>$error</span>";
+        }//end of getERROR
 
        private function validateUsername($un){
            if(strlen($un)>25 || strlen($un)<5){
@@ -67,7 +83,7 @@
 		       if(strlen($pw)>25 || strlen($pw)<5){
            	    //add error in array crated in constructor
                 array_push($this->errorArray,"your password must be between 5 to 25 char");
-                return;
+                       return;
 
            }    
 
