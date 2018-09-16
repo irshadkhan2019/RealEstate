@@ -32,9 +32,46 @@
   <script type="text/javascript" src="assets/js/register.js"></script>
 </head>
 <body>
+       <?php //show register form when reg button pressed
+         if(isset($_POST['registerButton'])){
+         	
+         	echo '<script>
+         	   $(document).ready( function() {
+
+		 			$("#loginForm").hide();
+	        	$("#registerForm").show();
+		
+		
+				});
+
+	        </script>';
+         }
+         else{
+
+         	echo '<script>
+         	   $(document).ready( function() {
+
+		 		$("#loginForm").show();
+	        	$("#registerForm").hide();
+		
+	          )};
+
+	        </script>';
+         }
+  
+       ?>
+     <script >//hide show login and register forms
+	     	$(document).ready( function() {
+
+		 $("#loginForm").show();
+	        $("#registerForm").hide();
+		
+	});
+     </script>
+
 	<div id="background">
 		<div id="loginContainer">
-		      <div id="inputContainer">
+		    <div id="inputContainer">
 		  	   <form  id="loginForm" action="register.php" method="POST">
 		  	   	      <h2>Login to your account</h2>
 		  	   	       <p> 
@@ -106,8 +143,16 @@
 		  	   	    </div>
 		  	   </form>
 
+            </div>
+            	<div id="loginText">
+            	<h1>Great Houses available for rent and purchase</h1>
+            	<ul>
+            	  <li> Variety of choices available</li>
+            	  <li> GO Ahead Pick One!!!!</li>	
+            	</ul>	
+            	
+            	</div>
         </div>
-     </div>
-  </div>
+    </div>
 </body>
 </html>
