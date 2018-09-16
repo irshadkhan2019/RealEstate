@@ -8,10 +8,9 @@
     $dbname = "RealEstate";
 
 	// Create connection
-     $con = new mysqli($servername, $username, $password, $dbname);
+     //$con = new mysqli($servername, $username, $password, $dbname);
 	// Check connection
-    if ($con->connect_error) {
-    	die("Connection failed: " . $con->connect_error);
-    } 
+	$con = mysqli_connect($servername, $username, $password,$dbname);
+    
 
 ?>

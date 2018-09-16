@@ -1,5 +1,6 @@
 <?php 
     include("includes/classes/Account.php"); 
+    include("includes/classes/Constants.php"); 
     include("includes/Config.php"); 
     
     $account=new Account();
@@ -26,7 +27,9 @@
   <div id="inputContainer">
   	   <form  id="loginForm" action="register.php" method="POST">
   	   	      <h2>Login to your account</h2>
-  	   	       <p> <label for="loginUsername">Username</label>
+  	   	       <p> 
+                   <?php echo $account->getError( Constants::$loginFailed); ?>
+  	   	       	   <label for="loginUsername">Username</label>
   	   	           <input id="loginUsername" type="text" name="loginUsername" placeholder="e.g.Ezuku Midoria" required>
   	   	       </p>
   	   	       <p>  <label for="loginPassword">Password</label>
@@ -43,6 +46,7 @@
   	   	       	   <?php 
   	   	       	   //if error exist get it
   	   	       	   echo $account->getError("your username must be between 5 to 25 char");
+  	   	       	   echo $account->getError(Constants::$usernameTaken);
                      
   	   	       	   ?> 
   	   	       	   <label for="registerUsername">Username</label>
@@ -61,6 +65,7 @@
   	   	       <p> 
                     <?php echo $account->getError("your Email doesnt match");?>
                     <?php echo $account->getError("Email is invalid");?>
+                    <?php echo $account->getError(Constants::$emailTaken); ?>
   	   	       	   <label for="email">Email</label>
   	   	           <input id="email" type="text" name="email" placeholder="e.g.Ezuku@Midoria.com"  value="<?php getInputValue('email') ?>" required>
   	   	       </p>
