@@ -1,5 +1,7 @@
 <?php
     ob_start();//output buffering send data in pieces
+    session_start();
+    
     $timezone=date_default_timezone_set("Europe/Amsterdam");
 
     $servername = "localhost";

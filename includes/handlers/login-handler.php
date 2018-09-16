@@ -10,6 +10,8 @@
     $result= $account->login($username,$password);
 
     if($result ==true){
+    	//create session var and give vaule i.e username
+    	$_SESSION['userLoggedIn']=$username;
     	header("Location:index.php");
     }
 	
