@@ -3,6 +3,9 @@
     include("includes/Config.php"); 
     
     $account=new Account();
+    //pass $con var to account
+    $account->con($con);
+   
 
     include("includes/handlers/register-handler.php"); //copies all code and paste below
     include("includes/handlers/login-handler.php"); 

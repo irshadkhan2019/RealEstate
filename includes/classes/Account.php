@@ -1,10 +1,17 @@
 <?php
     class Account{
-        
+        private $con;
         private $errorArray=array();
-        // function__construct($errorArray){
-          //  $this->errorArray=array();//creates empty array
-        //}
+        //private $errorArray;
+        // public function __construct($con){
+         	//$this->con=$con;
+        // $this->errorArray=array();//creates empty array
+       // }
+        public function con($con)
+        {   //public $errorArray=array();
+        	$this->con=$con;
+
+        }
        
         
         public function register($un,$fn,$ln,$em,$em2,$pw,$pw2){
@@ -17,7 +24,9 @@
             if(empty($this->errorArray==true))//check if err array is empty or not
             {   
             	//insert into db
-            	return true;//if no error this true is retuned to $wasSuccesful in register-handler
+            	//return true;if no error this true is retuned to $wasSuccesful in register-handler
+            	return $this->insertUserDetails($un,$fn,$ln,$em,$pw);//true or false return to $wasSucc..
+
             }
             else{
             	return false;
@@ -32,6 +41,16 @@
         	//if exist then
         	return"<span class='errorMessage'>$error</span>";
         }//end of getERROR
+        //insert detail in database
+        private function insertUserDetails($un,$fn,$ln,$em,$pw){
+           $encryptPw=md5($pw);//encry pass
+           $profilePic="assets/images/profile-pics/image.png";
+           $date=date("Y-m-d");
+           //insert
+           $sql = "INSERT INTO users VALUES('','$un','$fn','$ln','$em','$encryptPw','$date','$profilePic')";
+           $result=$this->con->query($sql);		
+           return $result;//true if succeful and retun to inertUSerDetai
+        }
 
        private function validateUsername($un){
            if(strlen($un)>25 || strlen($un)<5){
@@ -60,7 +79,7 @@
 		}
 		private function validateEmails($em,$em2){
                 if($em!=$em2){
-                    array_push($this->errorArray,"your Eail doesnt match");
+                    array_push($this->errorArray,"your Email doesnt match");
                     return;
                 }
                 if(!filter_var($em,FILTER_VALIDATE_EMAIL)){//ECHECK IF EMAIL ISN IN PROPER FORMAT
