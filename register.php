@@ -2,6 +2,7 @@
     include("includes/classes/Account.php"); 
     include("includes/classes/Constants.php"); 
     include("includes/Config.php"); 
+
     
     $account=new Account();
     //pass $con var to account
@@ -23,6 +24,12 @@
 <head>
 	<title>Welcome to RealEstate</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/register.css ">
+     <script
+  		src="https://code.jquery.com/jquery-3.3.1.js"
+  		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  		crossorigin="anonymous">
+  </script>
+  <script type="text/javascript" src="assets/js/register.js"></script>
 </head>
 <body>
 	<div id="background">
@@ -40,10 +47,14 @@
 		  	   	       </p>
 		  	   	     
 		  	   	    <button type="submit" name="loginButton">LOG IN</button>
+
+		  	   	    <div class="hasAccountText">
+		  	   	    	 <span id="hideLogin">Don't have an account yet? Sign Up here</span>
+		  	   	    </div>
 		  	   </form>
 
 		      
-		        <form  id="loginForm" action="register.php" method="POST">
+		        <form  id="registerForm" action="register.php" method="POST">
 		  	   	      <h2>Register  your free account</h2>
 		  	   	       <p> 
 		  	   	       	   <?php 
@@ -90,6 +101,9 @@
 		  	   	       </p>
 		  	   	     
 		  	   	    <button type="submit" name="registerButton">Sign up</button>
+		  	   	     <div class="hasAccountText">
+		  	   	    	 <span id="hideRegister">Have an account! Sign In here</span>
+		  	   	    </div>
 		  	   </form>
 
         </div>

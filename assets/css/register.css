@@ -48,6 +48,10 @@ html,body{
 }
 #inputContainer button:hover{
   cursor: pointer;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+
+ 
+
 }
 #inputContainer input[type="text"],
 input[type="password"],input[type="email"]{
@@ -72,9 +76,11 @@ input[type="password"],input[type="email"]{
     width: 100%;
 }
 
-::-moz-input-placeholder { /* Firefox 19+ */
-  color:#fff;
-
+.hasAccountText span{
+	font-weight: bold;
+	font-size: 12px;
 }
-}
 
+.hasAccountText{
+	text-align: center;
+}
