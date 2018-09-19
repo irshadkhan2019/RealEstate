@@ -22,7 +22,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Welcome to RealEstate</title>
+	<title>Welcome to MyApp</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/register.css ">
      <script
   		src="https://code.jquery.com/jquery-3.3.1.js"
@@ -74,13 +74,14 @@
 		    <div id="inputContainer">
 		  	   <form  id="loginForm" action="register.php" method="POST">
 		  	   	      <h2>Login to your account</h2>
-		  	   	       <p> 
+		  	   	       <p>  <span class='errorMessage'>
 		                   <?php echo $account->getError( Constants::$loginFailed); ?>
+		                    </span><br><br> 	
 		  	   	       	   <label for="loginUsername">Username</label>
-		  	   	           <input id="loginUsername" type="text" name="loginUsername" placeholder="e.g.Ezuku Midoria" required>
+		  	   	           <input id="loginUsername" type="text" name="loginUsername" placeholder="e.g.Ezuku Midoria" value="<?php getInputValue('loginUsername') ?>" required>
 		  	   	       </p>
 		  	   	       <p>  <label for="loginPassword">Password</label>
-		  	   	       	    <input id="loginPassword" type="password" name="loginPassword" placeholder="enter pass"  required>
+		  	   	       	    <input id="loginPassword" type="password" name="loginPassword" placeholder="Enter Pass"   required>
 		  	   	       </p>
 		  	   	     
 		  	   	    <button type="submit" name="loginButton">LOG IN</button>
@@ -145,10 +146,10 @@
 
             </div>
             	<div id="loginText">
-            	<h1>Great Houses available for rent and purchase</h1>
+            	<h1>Watch,Stream Download anything u Want</h1>
             	<ul>
             	  <li> Variety of choices available</li>
-            	  <li> GO Ahead Pick One!!!!</li>	
+            	  <li> GO Ahead Try it</li>	
             	</ul>	
             	
             	</div>

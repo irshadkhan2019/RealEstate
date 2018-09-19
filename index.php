@@ -15,11 +15,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>RealEstate</title>
+	<title>My App</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/index.css">
 </head>
 <body>
- <?php  
-  echo "hello";
- ?>
+
+<div id="nowPlayingBarContainer">
+    <div id="nowPlayingBar">
+        <div id="nowPlayingLeft">
+          
+        </div>
+        <div id="nowPlayingCenter">
+          
+        </div>
+        <div id="nowPlayingRight">
+          
+        </div>
+    </div>
+</div>
 </body>
 </html>
