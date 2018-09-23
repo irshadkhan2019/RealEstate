@@ -171,6 +171,31 @@ margin-top: 16px;
 .navItemLink:hover{
 	color: #fff;
 }
+.gridViewContainer{
+	    padding-left: 260px;
+}
 
-​
+
+.gridViewItem img {
+	width:100%;
+
+}
+.gridViewInfo{
+	text-align:center;
+	font-weight:700;
+	padding:5px;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+
+}
+.gridViewItem{
+	display:inline-block;
+	margin-right:20px;
+	width:29%;
+	max-width:200px;
+	min-width:100px;
+	margin-bottom:20px;
+}
+
 
